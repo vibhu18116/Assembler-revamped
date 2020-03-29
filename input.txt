@@ -1,0 +1,24 @@
+START 100
+    addM MACRO p1 p2 p3
+    CLA
+    ADD p1
+    ADD p2
+    SAC p3
+    M: DSP p3
+    MEND
+    CLA
+    INP A
+    INP B
+    addM A B C
+    addM P Q R
+    LAC A
+    SUB B
+    BRN L1
+    DSP A
+    CLA
+    BRZ L2
+L1: DSP B
+    CLA
+    BRZ L2
+L2: STP
+END
